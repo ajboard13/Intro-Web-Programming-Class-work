@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<title>Building a computer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<STYLE TYPE="text/css">
+<!--
+
+BODY{
+overflow-x:hidden;
+}
+
+.s1
+{
+  position  : absolute;
+  font-size : 10pt;
+  color     : blue;
+  visibility: hidden;
+}
+
+.s2
+{
+  position  : absolute;
+  font-size : 18pt;
+  color     : red;
+	visibility : hidden;
+}
+
+.s3
+{
+  position  : absolute;
+  font-size : 14pt;
+  color     : gold;
+	visibility : hidden;
+}
+
+.s4
+{
+  position  : absolute;
+  font-size : 12pt;
+  color     : lime;
+	visibility : hidden;
+}
+
+//-->
+</STYLE>
+	</head>
+	<body>
+	<DIV ID="div1" CLASS="s1">*</DIV>
+<DIV ID="div2" CLASS="s2">*</DIV>
+<DIV ID="div3" CLASS="s3">*</DIV>
+<DIV ID="div4" CLASS="s4">*</DIV>
+
+<p align="center"><font face="arial" size="-2">This free script provided by</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://javascriptkit.com">JavaScript
+Kit</a></font></p>
+
+<SCRIPT LANGUAGE="javascript" TYPE="text/javascript">
+
+/*
+Script by Mike McGrath- http://website.lineone.net/~mike_mcgrath
+Featured on JavaScript Kit (http://javascriptkit.com)
+For this and over 400+ free scripts, visit http://javascriptkit.com
+*/
+
+//Updated Feb 20th, 08 by JavaScriptKit.com: Script now compatible in IE7/FF 
+
+var standardbody=(document.compatMode=="CSS1Compat")? document.documentElement : document.body //create reference to common "body" across doctypes
+
+var nav = (!document.all || window.opera);
+var tmr = null;
+var spd = 50;
+var x = 0;
+var x_offset = 5;
+var y = 0;
+var y_offset = 15;
+
+document.onmousemove = get_mouse; 
+
+function get_mouse(e)
+{    
+  x = (nav) ? e.pageX : event.clientX+standardbody.scrollLeft;
+  y = (nav) ? e.pageY : event.clientY+standardbody.scrollTop;
+  x += x_offset;
+  y += y_offset;
+  beam(1);     
+}
+
+function beam(n)
+{
+  if(n<5)
+  {
+				document.getElementById('div'+n).style.top=y+'px'
+				document.getElementById('div'+n).style.left=x+'px'
+				document.getElementById('div'+n).style.visibility='visible'
+    n++;
+    tmr=setTimeout("beam("+n+")",spd);
+  }
+  else
+  {
+     clearTimeout(tmr);
+     fade(4);
+  }   
+} 
+
+function fade(n)
+{
+  if(n>0) 
+  {
+				document.getElementById('div'+n).style.visibility='hidden'
+    n--;
+    tmr=setTimeout("fade("+n+")",spd);
+  }
+  else clearTimeout(tmr);
+} 
+
+// -->
+</SCRIPT>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Building a PC</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="yourpcneeds.html">Your PC Needs</a></li>
+								<li><a href="PartsNeeded.html">Parts Needed</a></li>
+								<li><a href="Stepsforbuilding.html">Steps For Building</a></li>
+								<li><a href="cpubreakdown.html">CPU Breakdown</a></li>
+								<li><a href="../home.htm">Web Programming Homepage</a></li>
+								<li><a href="#footer">Contact</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-diamond"></span></div>
+							<h2>Building a PC</h2>
+							<p>Solid-State template provided by <a href="http://html5up.net">HTML5 UP</a></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									
+									<div class="content">
+										<h2 class="major">Welcome!</h2>
+										<p>Welcome to my complete computer building guide! This guide will help someone new to building computers through their first build. To begin check out the "Your PC Needs" page to help determine what you want to get out of your PC.
+										When you have decided what you will use the computer for, its time to shop for the parts you will need. Check out the "Parts Needed" page for help. After aquiring all the parts needed for the build its time to get started!
+										Use the "Steps For Building" page to start working on your dream machine!</p>
+										
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+								        
+									<div class="content">
+										<h2 class="major">Why build over buy?</h2>
+										<p>So you may be asking the question "Why build a PC when you can buy one prebuilt?"
+										Well building a PC yourself is often more cost effecient, customizable, and just plain fun!
+										Sometimes the big box stores will charge prices for prebuilt computers that costs much more than the components of the build.
+										Building your own PC gives you the flexibility to build to your own specific needs, whether that is gaming, editing, home theater (HTPC), or just browsing.
+										With the ability to pick the quality of the parts you need, you will be able to stick to a specific budget allowing you to spend more on components you feel are more specific to what you need.
+										You may think it a daunting task to build a pc from scratch, but don't worry! This guide will help you through all the steps and have you well on your way to enjoying your new computer. 
+										It will just be that much better knowing you built it yourself!</p>
+										
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									
+									<div class="content">
+										<h2 class="major">The Dangers of Building</h2>
+										<p>Well you will find solace in the fact that it can be very difficult to do permanent damage to your components. Besides breaking them, the most common concern is sending a static shock through any of your parts. Just make sure you are well grounded before touching any components.
+										You may also be prone to pokes and scrapes from sharp corners if you arent careful. Other than that just follow the steps in this guide and you will make it through alright.</p>
+										
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Other F.A.Qs</h2>
+									<p>Some other freaquently asked questions.</p>
+									<section class="features">
+										<article>
+											
+											<h3 class="major">How do I know I'm getting the right parts?</h3>
+											<p>Shopping for the components is quite a task. You can quickly find yourself overwhelmed with the options you have. So how do you know if you are getting the right parts? Well you have to start by asking yourself shat you will be using the PC for.
+											As far as looking for quality parts, make sure you check out online reviews on the parts you are looking at as well as looking up the company to see if they are reputable.
+											Check out the "Your PC Needs" page for more information.</p>
+											<a href="yourpcneeds.html" class="special">Your PC Needs</a>
+										</article>
+										<article>
+											
+											<h3 class="major">How long does it take?</h3>
+											<p>Depending on your skill level and other factors, a build can take 1-2 days. It's more common to see a build complete within a day however, and as your skills and knowledge grow you will be building working computers within hours!</p>
+											
+										</article>
+										<article>
+											
+											<h3 class="major">How difficult is it?</h3>
+											<p>Well building a computer with no guide to help you can surely be confusing, but with the right instructions, anyone can build a PC. That's what this guide is here for, to give you precise, easy to follow instructions.</p>
+											
+										</article>
+										<article>
+											
+											<h3 class="major">How much does it cost</h3>
+											<p>It's hard to put an exact dollar amount on it because everyones needs is different. The great thing about building your own PC is that you can usually find something within any reaonable budget.</p>
+											
+										</article>
+									</section>
+									<ul class="actions">
+										<li><a href="#" class="button">Browse All</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>If you have any further questions or are confused on any content in this site feel free to email me.</p>
+							<form method="post" action="#">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="4"></textarea>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								
+								<li class="fa-phone">(555) 555-5555</li>
+								<li class="fa-envelope"><a href= "mailto:aaronjboard@live.com">aaronjboard@live.com</a></li>
+								<li class="fa-twitter"><a href="#">twitter.com/aaron</a></li>
+								<li class="fa-facebook"><a href="#">facebook.com/aaron</a></li>
+								<li class="fa-instagram"><a href="#">instagram.com/aaron</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li><h3><i>EDUCATIONAL ONLY, NO COMMERCIAL VALUE.</i></h3></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
